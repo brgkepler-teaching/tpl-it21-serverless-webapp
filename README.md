@@ -4,12 +4,12 @@ Vorlage für das Modul *IT-21 Serverless Web-Apps*: eine Single-Page-Webapp (**K
 Die genauen Aufgabenstellungen und Abgaben stehen in den Teams-Assignments.
 
 ```
-index.html + style.css + app.js ──► localStorage / IndexedDB ──► Supabase (Cloud-DB) ──► GitHub Pages
+index.html + style.css + app.js ──► localStorage ──► SQLite im Browser ──► Supabase (Cloud-DB) ──► GitHub Pages
 ```
 
 ## So startest du
 1. Repository über **„Use this template“** auf GitHub in deinen Account kopieren und in GitHub Desktop klonen.
-2. `index.html` im Browser öffnen oder in VS Code mit *Live Server* starten (Codespace: Port 5500 öffnen).
+2. Lokalen Webserver starten: im Terminal von **Antigravity** (alternativ VS Code) `python -m http.server 5500`, dann `http://127.0.0.1:5500` öffnen (Codespace: Port 5500 öffnen). Ab Aufgabe 21.3 (SQLite/WASM) ist ein Webserver Pflicht.
 3. Stellen mit `🎯 CUSTOMIZATION POINT` im Code sind deine Anpassungspunkte.
 
 ## Dateien

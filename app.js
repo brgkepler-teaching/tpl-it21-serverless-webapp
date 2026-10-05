@@ -6,7 +6,7 @@
  * 1. State Management (Zentrales Datenmodell)
  * 2. DOM-Rendering (Dynamische Cards)
  * 3. Event Handling (Filter, Suche, Modal)
- * 4. Lokale Persistenz (localStorage / IndexedDB)
+ * 4. Lokale Persistenz (localStorage, später SQLite im Browser)
  */
 
 // ==============================================================================
