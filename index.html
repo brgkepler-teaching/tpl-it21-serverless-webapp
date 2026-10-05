@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kepler Item Hub – Client-Side Webapp</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ====================================================================
+       1. HEADER & NAVIGATION (🎯 CUSTOMIZATION POINT: Passe Titel & Icons an)
+       ==================================================================== -->
+  <header class="app-header">
+    <div class="header-content">
+      <div class="brand">
+        <span class="brand-icon">⚡</span>
+        <h1 id="app-title">Kepler Item Hub</h1>
+      </div>
+      <p class="brand-subtitle">Interaktive Serverless Web-Applikation (7. Klasse IT)</p>
+    </div>
+
+    <!-- Aktionsleiste: Suche, Filter & Neuer Eintrag -->
+    <div class="action-bar">
+      <input type="search" id="search-input" placeholder="🔍 Einträge durchsuchen..." aria-label="Einträge durchsuchen">
+      <select id="category-filter" aria-label="Nach Kategorie filtern">
+        <option value="all">Alle Kategorien</option>
+        <!-- 🎯 CUSTOMIZATION POINT: Füge hier deine eigenen Kategorien ein -->
+        <option value="hardware">Hardware</option>
+        <option value="software">Software</option>
+        <option value="projekte">Projekte</option>
+      </select>
+      <button id="open-dialog-btn" class="btn btn-primary">+ Neuer Eintrag</button>
+    </div>
+  </header>
+
+  <!-- ====================================================================
+       2. MAIN CONTENT AREA (Dynamisches Card-Grid)
+       ==================================================================== -->
+  <main class="app-main">
+    <div class="stats-bar">
+      <span>Gesamtanzahl: <strong id="item-count">0</strong> Einträge</span>
+      <button id="clear-all-btn" class="btn btn-secondary btn-sm">Alle löschen</button>
+    </div>
+
+    <!-- Hier werden die Inhaltskarten durch JavaScript dynamisch eingefügt -->
+    <div id="card-grid" class="card-grid">
+      <!-- Platzhalter während des Ladens -->
+      <p class="empty-state">Noch keine Einträge vorhanden. Klicke auf "+ Neuer Eintrag"!</p>
+    </div>
+  </main>
+
+  <!-- ====================================================================
+       3. MODAL DIALOG (HTML5 <dialog> Element für Formular-Eingaben)
+       ==================================================================== -->
+  <dialog id="item-dialog" class="item-dialog">
+    <form id="item-form" method="dialog">
+      <h2>Neuen Eintrag hinzufügen</h2>
+      
+      <div class="form-group">
+        <label for="input-title">Titel / Name *</label>
+        <input type="text" id="input-title" required placeholder="z. B. Raspberry Pi 5">
+      </div>
+
+      <!-- 🎯 CUSTOMIZATION POINT: Passe die Kategorien an dein App-Thema an -->
+      <div class="form-group">
+        <label for="input-category">Kategorie *</label>
+        <select id="input-category" required>
+          <option value="hardware">Hardware</option>
+          <option value="software">Software</option>
+          <option value="projekte">Projekte</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="input-description">Beschreibung</label>
+        <textarea id="input-description" rows="3" placeholder="Kurze Beschreibung oder Notizen..."></textarea>
+      </div>
+
+      <!-- 🎯 CUSTOMIZATION POINT: Füge weitere Datenfelder hinzu (z. B. Rating, Priorität, Preis) -->
+      <div class="form-group">
+        <label for="input-rating">Bewertung (1–5 Sterne)</label>
+        <input type="number" id="input-rating" min="1" max="5" value="5">
+      </div>
+
+      <div class="dialog-actions">
+        <button type="button" id="close-dialog-btn" class="btn btn-secondary">Abbrechen</button>
+        <button type="submit" class="btn btn-primary">Speichern</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- ====================================================================
+       4. FOOTER
+       ==================================================================== -->
+  <footer class="app-footer">
+    <p>&copy; 2026 BRG Kepler Graz – IT-Zweig 7. Klasse | Entwickelt mit semantischem HTML5, CSS3 & JavaScript</p>
+  </footer>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
