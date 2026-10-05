@@ -9,7 +9,7 @@ index.html + style.css + app.js ──► localStorage ──► SQLite im Brows
 
 ## So startest du
 1. Repository über **„Use this template“** auf GitHub in deinen Account kopieren und in GitHub Desktop klonen.
-2. Lokalen Webserver starten: im Terminal von **Antigravity** (alternativ VS Code) `python -m http.server 5500`, dann `http://127.0.0.1:5500` öffnen (Codespace: Port 5500 öffnen). Ab Aufgabe 21.3 (SQLite/WASM) ist ein Webserver Pflicht.
+2. Lokalen Webserver starten: im Terminal von **Antigravity** (alternativ VS Code) `npx serve -l 5500` (im Projektordner), dann `http://localhost:5500` öffnen (Alternative: `python -m http.server 5500`) (Codespace: Port 5500 öffnen). Ab Aufgabe 21.3 (SQLite/WASM) ist ein Webserver Pflicht.
 3. Stellen mit `🎯 CUSTOMIZATION POINT` im Code sind deine Anpassungspunkte.
 
 ## Dateien
